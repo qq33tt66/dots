@@ -1,0 +1,91 @@
+
+* {
+    bg0:            #0B0C0C;   /* --background */
+    bg1:            #181D1C;   /* Custom secondary background */
+    fg0:            #b1baba;   /* --foreground */
+
+    accent-color:   #A35A73;   /* --color5 */
+    urgent-color:   #A35A73;   /* --color5 */
+
+    background-color: transparent;
+    text-color:       @fg0;
+
+    margin:     0;
+    padding:    0;
+    spacing:    0;
+}
+
+window {
+    location: center;
+    height: 320;
+    background-color: @bg0;
+}
+
+inputbar {
+    spacing: 4px;
+    padding: 4px;
+    background-color: @bg1;
+}
+
+prompt, entry, element-icon, element-text {
+    vertical-align: 0.5;
+}
+
+prompt {
+    text-color: @accent-color;
+}
+
+textbox {
+    padding:          4px;
+    background-color: @bg1;
+}
+
+listview {
+    padding:  4px 0;
+    lines:    8;
+    columns:  1;
+    fixed-height: false;
+}
+
+element {
+    padding: 4px;
+    spacing: 4px;
+}
+
+element normal normal {
+    text-color: @fg0;
+}
+
+element normal urgent {
+    text-color: @urgent-color;
+}
+
+element normal active {
+    text-color: @accent-color;
+}
+
+element alternate active {
+    text-color: @accent-color;
+}
+
+element selected {
+    text-color: @bg0;
+}
+
+element selected normal,
+element selected active {
+    background-color: @accent-color;
+}
+
+element selected urgent {
+    background-color: @accent-color;
+}
+
+element-icon {
+    size: 0.8em;
+}
+
+element-text {
+    text-color: inherit;
+}
+

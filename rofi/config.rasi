@@ -1,0 +1,156 @@
+// ══════════════════════════════════════════════════════════════════════════════
+//  ROFI CONFIGURATION - Fuzzel-like Minimal Style
+//  Gruvbox Dark Theme
+// ══════════════════════════════════════════════════════════════════════════════
+
+@import "gruvbox-dark"
+
+// ──────────────────────────────────────────────────────────────────────────────
+//  GLOBAL SETTINGS
+// ──────────────────────────────────────────────────────────────────────────────
+
+* {
+    font: "FiraCode Nerd Font Medium 12";
+    background-color: transparent;
+    text-color: @text;
+
+    bg:#141415;
+    fg: #cdcdcd;
+    prompt-color: #83a598;
+    match-color: #fb4934;
+    selection-bg: #606079;
+    border-color: #878787;
+}
+
+// ──────────────────────────────────────────────────────────────────────────────
+//  WINDOW
+// ──────────────────────────────────────────────────────────────────────────────
+
+window {
+    width: 20%;
+    background-color: @bg;
+    border: 2px;
+    border-color: @border-color;
+    border-radius: 0px;
+    padding: 8px;
+}
+
+// ──────────────────────────────────────────────────────────────────────────────
+//  MAIN BOX
+// ──────────────────────────────────────────────────────────────────────────────
+
+mainbox {
+    background-color: transparent;
+    children: [ inputbar, listview ];
+    spacing: 8px;
+    padding: 0px;
+}
+
+// ──────────────────────────────────────────────────────────────────────────────
+//  INPUT BAR
+// ──────────────────────────────────────────────────────────────────────────────
+
+inputbar {
+    background-color: transparent;
+    children: [ prompt, entry ];
+    spacing: 8px;
+    padding: 4px 8px;
+}
+
+prompt {
+    text-color: #333738;
+    background-color: transparent;
+    font: "FiraCode Nerd Font Medium 12";
+}
+
+entry {
+    text-color: @fg;
+    background-color: transparent;
+    placeholder: "Type to search...";
+    placeholder-color: @fg;
+    cursor: text;
+}
+
+// ──────────────────────────────────────────────────────────────────────────────
+//  LIST VIEW
+// ──────────────────────────────────────────────────────────────────────────────
+
+listview {
+    background-color: transparent;
+    lines: 10;
+    columns: 1;
+    spacing: 0px;
+    cycle: false;
+    dynamic: true;
+    scrollbar: false;
+    fixed-height: true;
+    border: 0px;
+}
+
+// ──────────────────────────────────────────────────────────────────────────────
+//  ELEMENTS
+// ──────────────────────────────────────────────────────────────────────────────
+
+element {
+    background-color: transparent;
+    text-color: @fg;
+    padding: 4px 8px;
+    border: 0px;
+    border-radius: 0px;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color: @fg;
+}
+
+element selected.normal {
+    background-color: @selection-bg;
+    text-color: @fg;
+}
+
+element alternate.normal {
+    background-color: transparent;
+    text-color: @fg;
+}
+
+// ──────────────────────────────────────────────────────────────────────────────
+//  ELEMENT CONTENT
+// ──────────────────────────────────────────────────────────────────────────────
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    highlight:  #d8647e;
+    cursor: inherit;
+}
+
+element-icon {
+    background-color: transparent;
+    size: 1.0em;
+    cursor: inherit;
+    text-color: inherit;
+}
+
+// ──────────────────────────────────────────────────────────────────────────────
+//  MESSAGE (Error/Info boxes)
+// ──────────────────────────────────────────────────────────────────────────────
+
+message {
+    background-color: transparent;
+    padding: 4px;
+}
+
+textbox {
+    background-color: transparent;
+    text-color: @fg;
+    padding: 4px;
+}
+
+// ──────────────────────────────────────────────────────────────────────────────
+//  MODE SWITCHER (Disabled for minimal look)
+// ──────────────────────────────────────────────────────────────────────────────
+
+mode-switcher {
+    enabled: false;
+}

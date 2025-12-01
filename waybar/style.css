@@ -1,0 +1,185 @@
+/* ==============================
+   Global Style
+============================== */
+@import "./mocha.css";
+* {
+  font-family: "FiraCode Nerd Font", sans-serif;
+  border: none;
+  font-weight: 600;
+  font-size: 12px;
+  color: #ffffff;
+  min-height: 10px;
+}
+
+/* ==============================
+   Waybar Window (Floating Style)
+============================== */
+window#waybar {
+  background: @base;
+  margin: 6px 8px;
+  padding: 4px 6px;
+}
+
+/* ==============================
+   Workspaces
+============================== */
+#workspaces {
+  padding: 2px;
+  min-width: 200px;
+}
+
+#workspaces button {
+  border-radius: 0;
+  padding: 2px 8px;
+  margin: 0 2px;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+}
+
+#workspaces button.active{
+  color:#ffffff;
+  background: #1c1c24;
+  border-bottom: 2px solid @blue;
+}
+
+/* ==============================
+   Modules Layout
+============================== */
+.modules-left,
+.modules-center,
+.modules-right {
+  margin: 0 5px;
+}
+
+/* ==============================
+   Common Module Style
+============================== */
+#clock,
+#network,
+#battery,
+#backlight,
+#pulseaudio,
+#cpu,
+#memory,
+#custom-clipboard,
+#custom-recorder,
+#custom-spotify,
+#custom-pomodoro,
+#custom-screenshot {
+  background: transparent;
+  padding: 4px 8px;
+  margin: 0 3px;
+}
+/* ==============================
+   Module Colors (Gruvbox Dark Themed)
+============================== */
+#clock {
+  color: @blue;
+  font-weight: 600;
+}
+#custom-recorder {
+  color: @red;
+  padding: 0 10px;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+#custom-pomodoro {
+  color: @text;
+}
+
+#network {
+  color: @sapphire;
+}
+
+#pulseaudio {
+  color: @teal;
+}
+
+#cpu {
+  color: @yellow;
+}
+
+#memory {
+  color: @green;
+}
+
+#battery {
+  color: @peach;
+}
+
+#battery.charging {
+  color: @green;
+}
+
+#battery.warning {
+  color: @yellow;
+}
+
+#battery.critical {
+  color: @red;
+  font-weight: bold;
+}
+
+#custom-spotify {
+  color: @mauve;
+}
+
+#custom-clipboard {
+  color: @sky;
+}
+
+#custom-screenshot {
+  color: @flamingo;
+}
+
+#backlight {
+  color: @rosewater;
+}
+
+/* ==============================
+   Tray Icons
+============================== */
+#tray {
+  background: transparent;
+  padding: 4px 8px;
+  margin: 0 3px;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: @red;
+}
+
+#tray menu {
+  background: @base;
+  border: 1px solid @overlay1;
+}
+
+#tray menuitem {
+  padding: 4px;
+}
+
+#tray > widget > * {
+  margin: 0 3px;
+}
+
+#clock:hover,
+#network:hover,
+#battery:hover,
+#backlight:hover,
+#pulseaudio:hover,
+#cpu:hover,
+#memory:hover,
+#workspaces button:hover,
+#custom-clipboard:hover,
+#custom-pomodoro:hover,
+#custom-screenshot:hover,
+#custom-spotify:hover {
+  background: @surface2;
+  transition: all 0.6s ease;
+}

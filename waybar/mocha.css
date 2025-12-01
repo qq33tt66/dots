@@ -1,0 +1,27 @@
+
+@define-color rosewater #141415;
+@define-color flamingo #1c1c24;
+@define-color pink #cdcdcd;
+@define-color mauve #878787;
+@define-color red #252530;
+@define-color maroon #606079;
+@define-color peach #b4d4cf;
+@define-color yellow #c48282;
+@define-color green #e8b589;
+@define-color teal #e0a363;
+@define-color sky #c3c3d5;
+@define-color sapphire #aeaed1;
+@define-color blue #bb9dbd;
+@define-color lavender #333738;
+@define-color text #d8647e;
+@define-color subtext1 #f3be7c;
+@define-color subtext0 #7e98e8;
+@define-color overlay2 #90a0b5;
+@define-color overlay1 #6e94b2;
+@define-color overlay0 #9bb4bc;
+@define-color surface2 #405065;
+@define-color surface1 #7fa563;
+@define-color surface0 #f3be7c;   /* filled (missing color) */
+@define-color base #141415;
+@define-color mantle #f3be7c;     /* filled (missing color) */
+@define-color crust #f3be7c;      /* filled (missing color) */

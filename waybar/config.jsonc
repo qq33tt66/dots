@@ -1,0 +1,47 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 0,
+  "spacing": 0,
+  "margin-top": 10,
+  "margin-bottom": 10,
+  "margin-left": 6,
+  "margin-right": 6,
+
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["network", "pulseaudio","custom/screenshot"],
+
+  "hyprland/workspaces": {
+    "format": "{1}"
+  },
+
+  "clock": {
+    "format": "{:%A, %d %B | %I:%M %p}",
+    "interval": 1,
+    "tooltip-format": "{:%A %d %B %Y}",
+    "on-click": "yad --calendar --title='Calendar' --width=300 --height=300 --no-buttons &"
+  },
+  "custom/screenshot": {
+  "format": "󰄄 ",
+  "tooltip": "Take Screenshot",
+  "on-click": "grim -g \"$(slurp)\" \"$HOME/Pictures/Screenshot/screenshot-$(date +'%d-%m-%Y_%H-%M-%S').png\""
+},
+
+
+  "network": {
+    "format-ethernet": "󰈁 Ethernet ",
+    "format-disconnected": "󰖪 Disconnected",
+    "tooltip": true
+  },
+
+
+  "pulseaudio": {
+    "format": "  {volume}%  ",
+    "format-muted": " Muted",
+    "scroll-step": 5,
+    "on-click": "pavucontrol"
+  }
+
+
+}
