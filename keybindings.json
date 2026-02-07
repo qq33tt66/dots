@@ -1,7 +1,54 @@
 // Place your key bindings in this file to override the defaults
 [
-  // =============================
   // ======= LEADER BINDS ========
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+shift+i",
+    "command": "editor.emmet.action.wrapWithAbbreviation",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    "key": "space .",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "workbench.action.toggleAuxiliaryBar",
+      ]
+    },
+    "when": "vim.mode == 'Normal' && (editorTextFocus || auxiliaryBarFocus || !inputFocus)"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "extension.vim_ctrl+n",
+    "when": "editorTextFocus && vim.active && vim.use<C-n> && !inDebugRepl || vim.active && vim.use<C-n> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-n> && !inDebugRepl && vim.mode == 'SearchInProgressMode' && !inQuickOpen"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "extension.vim_ctrl+p",
+    "when": "editorTextFocus && vim.active && vim.use<C-p> && !inDebugRepl || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'SearchInProgressMode' && !inQuickOpen"
+  },
+  {
+    "key": "alt-n",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "typst compile ${file}\u000d"
+    },
+    "when": "editorLangId == typst"
+  },
+  {
+    "key": "alt-m",
+    "command": "cph.runTestCases",
+    "when": "editorTextFocus"
+  },
   // =============================
   {
     "key": "space w", // [W]rite current file,
@@ -23,7 +70,10 @@
     "key": "space g g", // [G] [G]it
     "command": "runCommands",
     "args": {
-      "commands": ["workbench.view.scm", "workbench.scm.focus"]
+      "commands": [
+        "workbench.view.scm",
+        "workbench.scm.focus"
+      ]
     },
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
@@ -93,7 +143,7 @@
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
   {
-    "key": "shift-k", // vim classic. Why not just "gh" instead? Idk.
+    "key": "shift-k",
     "command": "editor.action.showHover",
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
@@ -125,12 +175,12 @@
   // ======= BUFFERS ========
   // ========================
   {
-    "key": "tab",
+    "key": "shift-L",
     "command": "workbench.action.nextEditorInGroup",
     "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
   },
   {
-    "key": "shift-tab",
+    "key": "shift-H",
     "command": "workbench.action.previousEditorInGroup",
     "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
   },
@@ -231,21 +281,12 @@
     "command": "list.toggleExpand",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && explorerResourceIsFolder && !inputFocus"
   },
-  {
-    "key": "ctrl+n",
-    "command": "workbench.action.toggleSidebarVisibility"
-  },
   // =========================
   // ======= TERMINAL ========
   // =========================
   {
-    "key": "ctrl+shift+j",
-    "command": "workbench.action.togglePanel"
-  },
-  {
-    "key": "ctrl+shift+b",
-    "command": "workbench.action.terminal.focusNext",
-    "when": "terminalFocus"
+    "key": "alt-,",
+    "command": "workbench.action.togglePanel",
   },
   {
     "key": "ctrl+shift+a",
@@ -333,5 +374,72 @@
   {
     "key": "cmd+n",
     "command": "-workbench.action.files.newUntitledFile"
+  },
+  // ========================
+  // ======= HARPOON ========
+  // ========================
+  {
+    "key": "space a", // [A]dd harpoon
+    "command": "vscode-harpoon.addEditor",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    "key": "space h", // Open [H]arpoon file
+    "command": "vscode-harpoon.editEditors",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "space p",
+    "command": "vscode-harpoon.editorQuickPick",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "space 1",
+    "command": "vscode-harpoon.gotoEditor1",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "space 2",
+    "command": "vscode-harpoon.gotoEditor2",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "space 3",
+    "command": "vscode-harpoon.gotoEditor3",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "space 4",
+    "command": "vscode-harpoon.gotoEditor4",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "space 5",
+    "command": "vscode-harpoon.gotoEditor5",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "cmd+i",
+    "command": "composerMode.agent"
+  },
+  // =======================
+  // ======= CURSOR ========
+  // =======================
+  {
+    "key": "escape",
+    "command": "composer.closeComposerTab",
+    "when": "composerFocused && !editorTextFocus || !editorTextFocus && focusedView =~ /^workbench.panel.aichat.view/"
+  },
+  {
+    "key": "cmd+escape",
+    "command": "-claude-code.runClaude.keyboard"
+  },
+  {
+    "key": "shift+enter",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\\\r\n"
+    },
+    "when": "terminalFocus"
   }
 ]

@@ -1,11 +1,20 @@
 {
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
   "workbench.settings.applyToAllProfiles": [],
-
+  "explorer.autoReveal": true,
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<Esc>"],
-      "when": ["editorFocus"],
-      "commands": [":nohl"], // Clears highlight of current search
+      "before": [
+        "<Esc>"
+      ],
+      "when": [
+        "editorFocus"
+      ],
+      "commands": [
+        ":nohl"
+      ], // Clears highlight of current search
       "silent": true
     }
   ],
@@ -14,9 +23,6 @@
     "<C-f>": false
   },
   // To improve performance
-  "extensions.experimental.affinity": {
-    "vscodevim.vim": 1
-  },
   "vim.incsearch": true,
   "vim.searchHighlightColor": "#f6ff0080",
   "vim.searchHighlightTextColor": "#fff",
@@ -24,30 +30,32 @@
   "vim.useCtrlKeys": true,
   "vim.hlsearch": true,
   "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.textColor": "#202020",
+  "vim.highlightedyank.duration": 150,
   "vim.smartRelativeLine": true,
   "vim.surround": true,
   "vim.easymotion": true, // Search with "\\
   "vim.insertModeKeyBindings": [
     {
-      "before": ["j", "j"],
-      "after": ["<Esc>"]
+      "before": [
+        "j",
+        "k"
+      ],
+      "after": [
+        "<Esc>"
+      ]
     },
-    {
-      "before": ["j", "k"],
-      "commands": [":w"],
-      "after": ["<Esc>"]
-    }
   ],
   "files.autoSave": "afterDelay",
-  "editor.fontFamily": "'FiraCode Nerd Font', monospace",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontFamily": "'Consolas', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 18,
   "editor.formatOnPaste": true,
   "editor.minimap.enabled": false,
   "explorer.confirmDelete": false,
   "editor.wordWrap": "on",
-  "workbench.colorTheme": "Kanagawa Vague Dark",
-  "workbench.iconTheme": "icons",
   "editor.stickyScroll.enabled": false,
+  // "editor.snippetSuggestions": "none",
   "github.copilot.nextEditSuggestions.enabled": true,
   "svelte.enable-ts-plugin": true,
   "github.copilot.enable": {
@@ -56,15 +64,24 @@
     "markdown": false,
     "scminput": false
   },
-  "[svelte]": {
-    "editor.defaultFormatter": "svelte.svelte-vscode"
-  },
   "workbench.activityBar.location": "hidden",
   "editor.formatOnSave": true,
+  "workbench.editor.showTabs": "multiple",
+  "window.commandCenter": false,
+  "window.density.editorTabHeight": "compact",
+  "window.menuBarVisibility": "compact",
+  "window.restoreWindows": "none",
   "breadcrumbs.enabled": false,
   "terminal.integrated.enableMultiLinePasteWarning": "never",
-  "[cpp]": {
-    "editor.defaultFormatter": "ms-vscode.cpptools"
+  "workbench.iconTheme": "material-icon-theme",
+  "security.workspace.trust.untrustedFiles": "open",
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "editor.fontSize": 16
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "git.openRepositoryInParentFolders": "never",
+  "workbench.colorTheme": "GitHub Dark Default",
+  "extensions.ignoreRecommendations": true
 }
