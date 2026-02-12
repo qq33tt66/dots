@@ -17,7 +17,7 @@
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
   {
-    "key": "space .",
+    "key": "alt-.",
     "command": "runCommands",
     "args": {
       "commands": [
@@ -337,7 +337,7 @@
     "when": "inQuickInput && quickInputType == 'quickPick'"
   },
   {
-    /** 
+    /**
         Doesn't work at the moment.
         Accessibility keybinds with "shift" when quickInput is open causes interference with keybinds.
         Will try to create PR to vscode if not resolved soon. https://github.com/microsoft/vscode/issues/180862

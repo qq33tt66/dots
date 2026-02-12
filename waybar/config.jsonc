@@ -1,47 +1,103 @@
 {
-  "layer": "top",
-  "position": "top",
-  "height": 0,
-  "spacing": 0,
-  "margin-top": 10,
-  "margin-bottom": 10,
-  "margin-left": 6,
-  "margin-right": 6,
+    "layer": "top",
+    "position": "top",
+    "modules-left": ["cpu","network", "memory", "pulseaudio"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["custom/recorder","backlight","custom/pomodoro","custom/spotify", "battery" , "clock","tray"],
 
-  "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["clock"],
-  "modules-right": ["network", "pulseaudio","custom/screenshot"],
-
-  "hyprland/workspaces": {
-    "format": "{1}"
-  },
-
-  "clock": {
-    "format": "{:%A, %d %B | %I:%M %p}",
-    "interval": 1,
-    "tooltip-format": "{:%A %d %B %Y}",
-    "on-click": "yad --calendar --title='Calendar' --width=300 --height=300 --no-buttons &"
-  },
-  "custom/screenshot": {
-  "format": "󰄄 ",
-  "tooltip": "Take Screenshot",
-  "on-click": "grim -g \"$(slurp)\" \"$HOME/Pictures/Screenshot/screenshot-$(date +'%d-%m-%Y_%H-%M-%S').png\""
+    "clock": {
+        "format": "{:%a, %d. %b  %I:%M %p}",
+	"tooltip":true,
+	"tooltip-format": "{calendar}"
+    },
+    "cpu": {
+        "format": "cpu: {usage}%",
+        "interval": 3,
+        "tooltip":true 
+    },
+    "memory": {
+        "format": "ram: {used:0.1f}G/{total:0.1f}G",
+        "interval": 1,
+        "tooltip": false
+    },
+       "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "interval":1,
+        "format": "bat: {capacity}%",
+        "format-charging": "chr: {capacity}%",
+        "format-plugged": "pwr: {capacity}%",
+        "format-alt": "bat: {time}",
+        "format-full": "bat: full",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": false
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "bri: {percent}%",
+        "format-alt": "bri: {percent}%",
+        "on-scroll-up": "brightnessctl set 5%+",
+        "on-scroll-down": "brightnessctl set 5%-",
+        "tooltip": false
+    },
+    "pulseaudio": {
+        "format": "vol: {volume}%",
+        "format-bluetooth": "blu: {volume}%",
+        "format-muted": "vol: muted",
+        "scroll-step": 5,
+        "on-click": "pavucontrol",
+        "ignored-sinks": ["Easy Effects Sink"]
+    },
+    "network": {
+        "interface": "enp5s0",
+        "format": "{ifname}",
+        "format-wifi": "wlo1: {essid}",
+        "format-ethernet": "enp5s0: {ipaddr}/{cidr}",
+        "format-disconnected": "eth: disconnected",
+        "max-length": 50
+    },
+"custom/recorder": {
+        "exec": "if [ -f /tmp/wf-recorder-status ]; then echo '{\"text\": \"Rec.\", \"tooltip\": \"Active Recording\"}'; else echo ''; fi",
+        "return-type": "json",
+        "interval": 1,
+        "format": "{}",
+        "tooltip": true
+    },
+"custom/spotify": {
+  "exec": "~/.config/waybar/scripts/spotify_status.sh",
+  "format": "{}",
+  "return-type": "json",
+  "interval": 1,
+"on-click": "playerctl --player=spotify play-pause || playerctl --player=cmus play-pause",
+  "on-scroll-up": "playerctl --player=spotify next || playerctl --player=cmus next",
+  "on-scroll-down": "playerctl --player=spotify previous || playerctl --player=cmus previous",
 },
-
-
-  "network": {
-    "format-ethernet": "󰈁 Ethernet ",
-    "format-disconnected": "󰖪 Disconnected",
-    "tooltip": true
-  },
-
-
-  "pulseaudio": {
-    "format": "  {volume}%  ",
-    "format-muted": " Muted",
-    "scroll-step": 5,
-    "on-click": "pavucontrol"
-  }
-
+"custom/pomodoro": {
+"tooltip": false,
+    "min-length": 5,
+    "exec": "$HOME/.config/waybar/scripts/timer.sh",
+    "on-click": "date --date='25 minutes' +%s > /var/tmp/waybar_timer",
+    "on-click-right": "echo READY > /var/tmp/waybar_timer",
+    "interval": 1
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "10"
+        },
+        "sort-by-number": true
+    }
 
 }

@@ -2,8 +2,53 @@
   "extensions.experimental.affinity": {
     "vscodevim.vim": 1
   },
+  "editor.glyphMargin": false,
+  "editor.folding": false,
+  "window.restoreWindows": "all",
+  "editor.letterSpacing": 0.5,
+  "editor.fontWeight": "400",
+  "editor.padding.top": 24,
+  "editor.padding.bottom": 24,
+  "editor.lineNumbers": "on",
+  "scm.diffDecorations": "none",
   "workbench.settings.applyToAllProfiles": [],
   "explorer.autoReveal": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "explorer.compactFolders": false,
+  "workbench.layoutControl.enabled": false,
+  "terminal.integrated.fontFamily": "MonaspiceNe Nerd Font Propo",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorStyle": "block",
+  "editor.cursorBlinking": "smooth",
+  "editor.guides.indentation": true,
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+  "editor.suggestSelection": "first",
+  "editor.inlineSuggest.enabled": true,
+  "editor.guides.bracketPairs": false,
+  "editor.renderWhitespace": "none",
+  "editor.renderLineHighlight": "line",
+  // "editor.cursorSmoothCaretAnimation": "on",
+  // "editor.smoothScrolling": true,
+  "editor.cursorWidth": 2,
+  // "workbench.list.smoothScrolling": true,
+  // "terminal.integrated.smoothScrolling": true,
+  "breadcrumbs.enabled": false,
+  "editor.minimap.enabled": false,
+  "editor.scrollbar.vertical": "hidden",
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.overviewRulerBorder": false,
+  "editor.hideCursorInOverviewRuler": true,
+  "window.commandCenter": false,
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": [
@@ -47,15 +92,13 @@
     },
   ],
   "files.autoSave": "afterDelay",
-  "editor.fontFamily": "'Consolas', monospace",
+  "editor.fontFamily": "MonaspiceNe Nerd Font Mono",
   "editor.fontLigatures": true,
-  "editor.fontSize": 18,
+  "editor.fontSize": 15,
   "editor.formatOnPaste": true,
-  "editor.minimap.enabled": false,
   "explorer.confirmDelete": false,
   "editor.wordWrap": "on",
   "editor.stickyScroll.enabled": false,
-  // "editor.snippetSuggestions": "none",
   "github.copilot.nextEditSuggestions.enabled": true,
   "svelte.enable-ts-plugin": true,
   "github.copilot.enable": {
@@ -67,13 +110,9 @@
   "workbench.activityBar.location": "hidden",
   "editor.formatOnSave": true,
   "workbench.editor.showTabs": "multiple",
-  "window.commandCenter": false,
   "window.density.editorTabHeight": "compact",
-  "window.menuBarVisibility": "compact",
-  "window.restoreWindows": "none",
-  "breadcrumbs.enabled": false,
   "terminal.integrated.enableMultiLinePasteWarning": "never",
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "helium-icon-theme",
   "security.workspace.trust.untrustedFiles": "open",
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
@@ -81,7 +120,13 @@
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "git.openRepositoryInParentFolders": "never",
-  "workbench.colorTheme": "GitHub Dark Default",
-  "extensions.ignoreRecommendations": true
+  "extensions.ignoreRecommendations": true,
+  "C_Cpp.default.compilerPath": "/usr/bin/g++-15",
+  "explorer.confirmDragAndDrop": false,
+  "chat.editing.confirmEditRequestRemoval": false,
+  "workbench.colorTheme": "GitHub Dark"
 }
