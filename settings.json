@@ -18,7 +18,7 @@
   "files.trimFinalNewlines": true,
   "explorer.compactFolders": false,
   "workbench.layoutControl.enabled": false,
-  "terminal.integrated.fontFamily": "MonaspiceNe Nerd Font Propo",
+  "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font Mono",
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyle": "block",
@@ -92,7 +92,7 @@
     },
   ],
   "files.autoSave": "afterDelay",
-  "editor.fontFamily": "MonaspiceNe Nerd Font Mono",
+  "editor.fontFamily": "CaskaydiaCove Nerd Font Mono",
   "editor.fontLigatures": true,
   "editor.fontSize": 15,
   "editor.formatOnPaste": true,
@@ -112,7 +112,7 @@
   "workbench.editor.showTabs": "multiple",
   "window.density.editorTabHeight": "compact",
   "terminal.integrated.enableMultiLinePasteWarning": "never",
-  "workbench.iconTheme": "helium-icon-theme",
+  "workbench.iconTheme": "material-icon-theme",
   "security.workspace.trust.untrustedFiles": "open",
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
@@ -123,10 +123,21 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "git.openRepositoryInParentFolders": "never",
+  "[cpp]": {
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+  },
+  "clangd.arguments": [
+    "--background-index",
+    "--clang-tidy",
+    "--completion-style=detailed"
+  ],
+  "editor.snippetSuggestions": "top",
+  "editor.tabCompletion": "off",
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  // "git.openRepositoryInParentFolders": "never",
   "extensions.ignoreRecommendations": true,
-  "C_Cpp.default.compilerPath": "/usr/bin/g++-15",
   "explorer.confirmDragAndDrop": false,
   "chat.editing.confirmEditRequestRemoval": false,
-  "workbench.colorTheme": "GitHub Dark"
+  "workbench.colorTheme": "GitHub Dark",
 }
+// remove these keybindings selectNextSuggestion,selectPrevSuggestion
