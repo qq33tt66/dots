@@ -19,7 +19,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         end
 
         -- Check if this LSP supports formatting
-        if client.supports_method("textDocument/formatting") then
+        if client:supports_method("textDocument/formatting") then
             vim.api.nvim_create_autocmd("BufWritePre", {
                 buffer = args.buf,
                 callback = function()
@@ -93,5 +93,10 @@ api.nvim_create_autocmd("BufReadPost", {
 
 -- no auto continue comments on new line
 vim.api.nvim_create_autocmd("FileType",
-    { group = vim.api.nvim_create_augroup("no_auto_comment", {}), callback = function() vim.opt_local.formatoptions
-            :remove({ "c", "r", "o" }) end, })
+    {
+        group = vim.api.nvim_create_augroup("no_auto_comment", {}),
+        callback = function()
+            vim.opt_local.formatoptions
+                :remove({ "c", "r", "o" })
+        end,
+    })

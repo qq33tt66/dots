@@ -44,7 +44,7 @@ end, { desc = "Search word under cursor" })
 -- =====================================================
 
 local MiniVisits = require("mini.visits")
-vim.keymap.set("n", "<leader>r", MiniVisits.select_path)
+vim.keymap.set("n", "<leader>vr", MiniVisits.select_path)
 
 
 -- =====================================================

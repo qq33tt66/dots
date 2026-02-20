@@ -110,10 +110,10 @@ require("competitest").setup({
     testcases_input_file_format = "$(FNOEXT)_input$(TCNUM).txt",
     testcases_output_file_format = "$(FNOEXT)_output$(TCNUM).txt",
 
-    companion_port = 8888,
+    companion_port = 27121,
     receive_print_message = false,
     start_receiving_persistently_on_setup = true,
-    template_file = "~/code/cp/a.cpp",
+    template_file = "~/code/dsa/cp/a.cpp",
     evaluate_template_modifiers = false,
     date_format = "%c",
     received_files_extension = "cpp",
