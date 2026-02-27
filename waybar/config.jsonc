@@ -1,37 +1,57 @@
 {
     "layer": "top",
     "position": "top",
-    "modules-left": ["cpu","network", "memory", "pulseaudio"],
-    "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["custom/recorder","backlight","custom/pomodoro","custom/spotify", "battery" , "clock","tray"],
-
+    "modules-left": [
+        "cpu",
+        "network",
+        "memory",
+        "pulseaudio"
+    ],
+    "modules-center": [
+        "sway/workspaces"
+    ],
+    "modules-right": [
+        "custom/recorder",
+        "backlight",
+        "custom/pomodoro",
+        "custom/spotify",
+        "battery",
+        "clock",
+        "tray"
+    ],
     "clock": {
         "format": "{:%a, %d. %b  %I:%M %p}",
-	"tooltip":true,
-	"tooltip-format": "{calendar}"
+        "tooltip": true,
+        "tooltip-format": "{calendar}"
     },
     "cpu": {
         "format": "cpu: {usage}%",
         "interval": 3,
-        "tooltip":true 
+        "tooltip": true
     },
     "memory": {
         "format": "ram: {used:0.1f}G/{total:0.1f}G",
         "interval": 1,
         "tooltip": false
     },
-       "battery": {
+    "battery": {
         "states": {
             "warning": 30,
             "critical": 15
         },
-        "interval":1,
+        "interval": 1,
         "format": "bat: {capacity}%",
         "format-charging": "chr: {capacity}%",
         "format-plugged": "pwr: {capacity}%",
         "format-alt": "bat: {time}",
         "format-full": "bat: full",
-        "format-icons": ["", "", "", "", ""],
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
         "tooltip": false
     },
     "backlight": {
@@ -48,7 +68,9 @@
         "format-muted": "vol: muted",
         "scroll-step": 5,
         "on-click": "pavucontrol",
-        "ignored-sinks": ["Easy Effects Sink"]
+        "ignored-sinks": [
+            "Easy Effects Sink"
+        ]
     },
     "network": {
         "interface": "enp5s0",
@@ -58,29 +80,29 @@
         "format-disconnected": "eth: disconnected",
         "max-length": 50
     },
-"custom/recorder": {
+    "custom/recorder": {
         "exec": "if [ -f /tmp/wf-recorder-status ]; then echo '{\"text\": \"Rec.\", \"tooltip\": \"Active Recording\"}'; else echo ''; fi",
         "return-type": "json",
         "interval": 1,
         "format": "{}",
         "tooltip": true
     },
-"custom/spotify": {
-  "exec": "~/.config/waybar/scripts/spotify_status.sh",
-  "format": "{}",
-  "return-type": "json",
-  "interval": 1,
-"on-click": "playerctl --player=spotify play-pause || playerctl --player=cmus play-pause",
-  "on-scroll-up": "playerctl --player=spotify next || playerctl --player=cmus next",
-  "on-scroll-down": "playerctl --player=spotify previous || playerctl --player=cmus previous",
-},
-"custom/pomodoro": {
-"tooltip": false,
-    "min-length": 5,
-    "exec": "$HOME/.config/waybar/scripts/timer.sh",
-    "on-click": "date --date='25 minutes' +%s > /var/tmp/waybar_timer",
-    "on-click-right": "echo READY > /var/tmp/waybar_timer",
-    "interval": 1
+    "custom/spotify": {
+        "exec": "~/.config/waybar/scripts/spotify_status.sh",
+        "format": "{}",
+        "return-type": "json",
+        "interval": 1,
+        "on-click": "playerctl --player=spotify play-pause || playerctl --player=cmus play-pause",
+        "on-scroll-up": "playerctl --player=spotify next || playerctl --player=cmus next",
+        "on-scroll-down": "playerctl --player=spotify previous || playerctl --player=cmus previous"
+    },
+    "custom/pomodoro": {
+        "tooltip": false,
+        "min-length": 5,
+        "exec": "$HOME/.config/waybar/scripts/timer.sh",
+        "on-click": "date --date='25 minutes' +%s > /var/tmp/waybar_timer",
+        "on-click-right": "echo READY > /var/tmp/waybar_timer",
+        "interval": 1
     },
     "hyprland/workspaces": {
         "format": "{icon}",
@@ -99,5 +121,4 @@
         },
         "sort-by-number": true
     }
-
 }

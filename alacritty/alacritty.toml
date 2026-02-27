@@ -1,0 +1,73 @@
+[window]
+decorations = "none"
+padding = { x = 8, y = 8 }
+dynamic_padding = true
+opacity =1.0
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular"}
+bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
+size = 16.0
+
+[colors.primary]
+background = "#1a1b26"
+foreground = "#c0caf5"
+
+[colors.cursor]
+text = "#1a1b26"
+cursor = "#c0caf5"
+
+[colors.selection]
+text = "#c0caf5"
+background = "#33467c"
+
+[colors.normal]
+black   = "#15161e"
+red     = "#f7768e"
+green   = "#9ece6a"
+yellow  = "#e0af68"
+blue    = "#7aa2f7"
+magenta = "#bb9af7"
+cyan    = "#7dcfff"
+white   = "#a9b1d6"
+
+[colors.bright]
+black   = "#414868"
+red     = "#f7768e"
+green   = "#9ece6a"
+yellow  = "#e0af68"
+blue    = "#7aa2f7"
+magenta = "#bb9af7"
+cyan    = "#7dcfff"
+white   = "#c0caf5"
+
+[cursor]
+style = { shape = "Block", blinking = "On" }
+blink_interval = 500
+unfocused_hollow = true
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[selection]
+save_to_clipboard = true
+
+[keyboard]
+bindings = [
+    # Copy/Paste
+    { key = "C", mods = "Control|Shift", action = "Copy" },
+    { key = "V", mods = "Control|Shift", action = "Paste" },
+    # Font size
+    { key = "J",  mods = "Alt|Shift", action = "IncreaseFontSize" },
+    { key = "K", mods = "Alt|Shift", action = "DecreaseFontSize" },
+    { key = "Key0",  mods = "Control", action = "ResetFontSize" },
+    # Scrolling
+    { key = "PageUp",   mods = "Shift", action = "ScrollPageUp" },
+    { key = "PageDown", mods = "Shift", action = "ScrollPageDown" },
+    { key = "Home",     mods = "Shift", action = "ScrollToTop" },
+    { key = "End",      mods = "Shift", action = "ScrollToBottom" },
+    # Spawn new window
+    { key = "N", mods = "Control|Shift", action = "SpawnNewInstance" },
+]

@@ -1,40 +1,40 @@
 * {
-  font-family: "MonaspiceNe Nerd Font", sans-serif;
-  border: none;
-  font-size: 13px;
-  color: #c9d1d9;
-  min-height: 10px;
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    border: none;
+    font-size: 13px;
+    color: #c9d1d9;
+    min-height: 10px;
 }
 
 window#waybar {
-  background: #0d1117;
-  margin: 6px 8px;
-  padding: 4px 6px;
+    background: #0d1117;
+    margin: 6px 8px;
+    padding: 4px 6px;
 }
 
 #workspaces {
-  padding: 2px;
-  min-width: 200px;
+    padding: 2px;
+    min-width: 200px;
 }
 
 #workspaces button {
-  border-radius: 0;
-  padding: 2px 8px;
-  margin: 0 2px;
-  border-bottom: 2px solid transparent;
-  color: #8b949e;
+    border-radius: 0;
+    padding: 2px 8px;
+    margin: 0 2px;
+    border-bottom: 2px solid transparent;
+    color: #8b949e;
 }
 
-#workspaces button.active {
-  color: #f0f6fc;
-  background: #161b22;
-  border-bottom: 2px solid #58a6ff;
+#workspaces button.focused {
+    color: #f0f6fc;
+    background: #161b22;
+    border-bottom: 2px solid #58a6ff;
 }
 
 .modules-left,
 .modules-center,
 .modules-right {
-  margin: 0 5px;
+    margin: 0 5px;
 }
 
 #clock,
@@ -49,40 +49,42 @@ window#waybar {
 #custom-spotify,
 #custom-pomodoro,
 #custom-screenshot {
-  background: transparent;
-  padding: 4px 8px;
-  margin: 0 3px;
+    background: transparent;
+    padding: 4px 8px;
+    margin: 0 3px;
 }
 
-#custom-pomodoro  { color:#ff7b72; }
+#custom-pomodoro {
+    color: #ff7b72;
+}
 
 #tray {
-  background: transparent;
-  padding: 4px 8px;
-  margin: 0 3px;
+    background: transparent;
+    padding: 4px 8px;
+    margin: 0 3px;
 }
 
-#tray > .passive {
-  -gtk-icon-effect: dim;
+#tray>.passive {
+    -gtk-icon-effect: dim;
 }
 
-#tray > .needs-attention {
-  -gtk-icon-effect: highlight;
-  background-color: #ff7b72;
-  color: #0d1117;
+#tray>.needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #ff7b72;
+    color: #0d1117;
 }
 
 #tray menu {
-  background: #161b22;
-  border: 1px solid #30363d;
+    background: #161b22;
+    border: 1px solid #30363d;
 }
 
 #tray menuitem {
-  padding: 4px;
+    padding: 4px;
 }
 
-#tray > widget > * {
-  margin: 0 3px;
+#tray>widget>* {
+    margin: 0 3px;
 }
 
 #clock:hover,
@@ -97,6 +99,6 @@ window#waybar {
 #custom-pomodoro:hover,
 #custom-screenshot:hover,
 #custom-spotify:hover {
-  background: #21262d;
-  transition: all 0.4s ease;
+    background: #21262d;
+    transition: all 0.4s ease;
 }
