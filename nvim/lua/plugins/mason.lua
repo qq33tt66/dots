@@ -1,5 +1,5 @@
 require("mason").setup()
 
 require("mason-lspconfig").setup({
-    automatic_enable = true,
+	automatic_enable = true,
 })

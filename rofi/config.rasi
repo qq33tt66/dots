@@ -1,116 +1,116 @@
-* {
-    font: "MonaspiceNe Nerd Font 20";
-    background-color: transparent;
-    text-color: #c9d1d9;
 
-    bg: #0d1117;
-    fg: #c9d1d9;
-    prompt-color: #58a6ff;
-    match-color: #f85149;
-    selection-bg: #21262d;
-    border-color: #30363d;
+configuration {
+  modes: "window,drun,run,ssh";
+  font: "JetBrainsMono Nerd Font SemiBold 16";
+  drun-display-format: "{name}";
+  show-icons:true;
+  icon-theme:"Mint-Y-Blue";
+}
+
+* {
+  bg: #1a1b26;        // Background
+  bgt: #283457;       // Selected Background
+  t: #1a1b26;         // Same as bg (can be used for border/title)
+  fg: #c0caf5;        // Foreground (text)
+
+  selected-bg: @bgt;  // Reuse bgt for selected background
+  selected-fg: #c0caf5; // Foreground for selected text
+
+  active: #7aa2f7;    // Blue (active elements)
+  urgent: #f7768e;    // Red (urgent elements)
 }
 
 window {
-    width: 20%;
-    background-color: @bg;
-    border: 2px;
-    border-color: @border-color;
-    border-radius: 0px;
-    padding: 8px;
+  fullscreen: true;
+  transparency:"real";
+  padding: 25% 20%;
+  background-color: @t;
+  border-color: @t;
+}
+
+listview {
+  border: 0 0 0 0;
+  padding: 0;
+  scrollbar: true;
+  scroll:true;
+  lines:20;
 }
 
 
-mainbox {
-    background-color: transparent;
-    children: [ inputbar, listview ];
-    spacing: 8px;
-    padding: 0px;
+entry {
+    placeholder: "Search";
+}
+
+textbox {
+    text-color: @fg;
+}
+
+element {
+    border-radius:  7px;
+    padding: 8px;
+}
+element.normal.normal {
+    background-color: @t;
+    text-color:       @fg;
+}
+element.normal.urgent {
+    background-color: @t;
+    text-color:       @urgent;
+}
+element.normal.active {
+    background-color: @t;
+    text-color:       @active;
+}
+element.selected.normal {
+    background-color: @selected-bg;
+    text-color:       @selected-fg;
+}
+element.selected.urgent {
+    background-color: @selected-bg;
+    text-color:       @urgent;
+}
+element.selected.active {
+    background-color: @selected-bg;
+    text-color:       @selected-fg;
+}
+element.alternate.normal {
+    background-color: @t;
+    text-color:       @fg;
+}
+element.alternate.urgent {
+    background-color: @t;
+    text-color:       @urgent;
+}
+element.alternate.active {
+    background-color: @t;
+    text-color:       @active;
 }
 
 
 inputbar {
-    background-color: transparent;
-    children: [ prompt, entry ];
-    spacing: 8px;
-    padding: 4px 8px;
-}
-
-prompt {
-    text-color: #333738;
-    background-color: transparent;
-}
-
-entry {
+    spacing:    0;
     text-color: @fg;
-    background-color: transparent;
-    placeholder: "Type to search...";
-    placeholder-color: @fg;
-    cursor: text;
+    padding:    2px;
+    children:   [ prompt, textbox-prompt-sep, entry, case-indicator ];
 }
 
-
-listview {
-    background-color: transparent;
-    lines: 10;
-    columns: 1;
-    spacing: 0px;
-    cycle: false;
-    dynamic: true;
-    scrollbar: false;
-    fixed-height: true;
-    border: 0px;
-}
-
-
-element {
-    background-color: transparent;
-    text-color: @fg;
-    padding: 4px 8px;
-    border: 0px;
-    border-radius: 0px;
-}
-
-element normal.normal {
-    background-color: transparent;
+case-indicator,
+entry,
+prompt,
+button {
+    spacing:    0;
     text-color: @fg;
 }
 
-element selected.normal {
-    background-color: @selection-bg;
+button.selected {
+    background-color: @bg;
+    text-color:       @fg;
+}
+
+textbox-prompt-sep {
+    expand:     false;
+    str:        ">";
     text-color: @fg;
+    margin:     0 0.3em 0 0;
 }
-
-element alternate.normal {
-    background-color: transparent;
-    text-color: @fg;
-}
-element-text {
-    background-color: transparent;
-    text-color: inherit;
-    highlight:  #d8647e;
-    cursor: inherit;
-}
-
-element-icon {
-    background-color: transparent;
-    size: 1.0em;
-    cursor: inherit;
-    text-color: inherit;
-}
-
-
-message {
-    background-color: transparent;
-    padding: 4px;
-}
-
-textbox {
-    background-color: transparent;
-    text-color: @fg;
-    padding: 4px;
-}
-
-mode-switcher {
-    enabled: false;
-}
+// }}}

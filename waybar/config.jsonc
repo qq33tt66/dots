@@ -2,13 +2,13 @@
     "layer": "top",
     "position": "top",
     "modules-left": [
-        "cpu",
+        // "cpu",
         "network",
         "memory",
         "pulseaudio"
     ],
     "modules-center": [
-        "sway/workspaces"
+        "hyprland/workspaces"
     ],
     "modules-right": [
         "custom/recorder",

@@ -1,0 +1,217 @@
+{
+  "CP Header": {
+    "prefix": "cph",
+    "body": [
+      "#include <bits/stdc++.h>",
+      "using namespace std;",
+      "",
+      "int main() {",
+      "\tios_base::sync_with_stdio(false);",
+      "\tcin.tie(NULL);",
+      "\t$0",
+      "\treturn 0;",
+      "}"
+    ]
+  },
+  "Read T cases": {
+    "prefix": "tc",
+    "body": ["int t;", "cin >> t;", "while (t--) {", "\t$0", "}"]
+  },
+  "Fast IO": {
+    "prefix": "fio",
+    "body": "ios_base::sync_with_stdio(false);\ncin.tie(NULL);"
+  },
+  "Read array": {
+    "prefix": "rar",
+    "body": [
+      "int ${1:n};",
+      "cin >> $1;",
+      "vector<${2:int}> ${3:a}($1);",
+      "for (auto& x : $3) cin >> x;"
+    ]
+  },
+  "Print array": {
+    "prefix": "par",
+    "body": "for (auto& x : ${1:a}) cout << x << \" \";\ncout << \"\\n\";"
+  },
+  "Binary search": {
+    "prefix": "bs",
+    "body": [
+      "int ${1:lo} = ${2:0}, ${3:hi} = ${4:n} - 1, ${5:ans} = -1;",
+      "while ($1 <= $3) {",
+      "\tint mid = $1 + ($3 - $1) / 2;",
+      "\tif (${6:check(mid)}) { $5 = mid; $1 = mid + 1; }",
+      "\telse $3 = mid - 1;",
+      "}"
+    ]
+  },
+  "Two pointers": {
+    "prefix": "tp",
+    "body": [
+      "int ${1:l} = 0, ${2:r} = 0;",
+      "while ($2 < ${3:n}) {",
+      "\t$0",
+      "\t$2++;",
+      "}"
+    ]
+  },
+  "Prefix sum": {
+    "prefix": "psum",
+    "body": [
+      "vector<${1:long long}> ${2:pre}(${3:n} + 1, 0);",
+      "for (int i = 1; i <= $3; i++) $2[i] = $2[i-1] + ${4:a}[i-1];"
+    ]
+  },
+  "GCD LCM": {
+    "prefix": "gcd",
+    "body": "auto gcd = [](auto a, auto b) { while(b) { a %= b; swap(a,b); } return a; };\nauto lcm = [&](auto a, auto b) { return a / gcd(a,b) * b; };"
+  },
+  "Modular exp": {
+    "prefix": "mpow",
+    "body": [
+      "auto mpow = [&](long long ${1:b}, long long ${2:e}, long long ${3:mod}) {",
+      "\tlong long res = 1; $1 %= $3;",
+      "\twhile ($2 > 0) {",
+      "\t\tif ($2 & 1) res = res * $1 % $3;",
+      "\t\t$1 = $1 * $1 % $3; $2 >>= 1;",
+      "\t}",
+      "\treturn res;",
+      "};"
+    ]
+  },
+  "DSU": {
+    "prefix": "dsu",
+    "body": [
+      "vector<int> ${1:par}(${2:n}+1), ${3:rnk}(${2:n}+1, 0);",
+      "iota($1.begin(), $1.end(), 0);",
+      "auto find = [&](auto& self, int x) -> int {",
+      "\treturn $1[x] == x ? x : $1[x] = self(self, $1[x]);",
+      "};",
+      "auto unite = [&](int a, int b) {",
+      "\ta = find(find, a); b = find(find, b);",
+      "\tif (a == b) return;",
+      "\tif ($3[a] < $3[b]) swap(a, b);",
+      "\t$1[b] = a; if ($3[a] == $3[b]) $3[a]++;",
+      "};"
+    ]
+  },
+  "BFS": {
+    "prefix": "bfs",
+    "body": [
+      "vector<int> ${1:dist}(${2:n}+1, -1);",
+      "queue<int> ${3:q};",
+      "$3.push(${4:src}); $1[$4] = 0;",
+      "while (!$3.empty()) {",
+      "\tauto u = $3.front(); $3.pop();",
+      "\tfor (auto v : ${5:adj}[u]) {",
+      "\t\tif ($1[v] == -1) { $1[v] = $1[u]+1; $3.push(v); }",
+      "\t}",
+      "}"
+    ]
+  },
+  "DFS": {
+    "prefix": "dfs",
+    "body": [
+      "vector<bool> ${1:vis}(${2:n}+1, false);",
+      "auto dfs = [&](auto& self, int u) -> void {",
+      "\t$1[u] = true;",
+      "\tfor (auto v : ${3:adj}[u])",
+      "\t\tif (!$1[v]) self(self, v);",
+      "};",
+      "dfs(dfs, ${4:0});"
+    ]
+  },
+  "Dijkstra": {
+    "prefix": "dijk",
+    "body": [
+      "vector<long long> ${1:d}(${2:n}+1, LLONG_MAX);",
+      "priority_queue<pair<long long,int>, vector<pair<long long,int>>, greater<>> ${3:pq};",
+      "$1[${4:src}] = 0; $3.push({0, $4});",
+      "while (!$3.empty()) {",
+      "\tauto [du, u] = $3.top(); $3.pop();",
+      "\tif (du > $1[u]) continue;",
+      "\tfor (auto [v, w] : ${5:adj}[u])",
+      "\t\tif ($1[u]+w < $1[v]) { $1[v]=$1[u]+w; $3.push({$1[v],v}); }",
+      "}"
+    ]
+  },
+  "Sieve": {
+    "prefix": "siev",
+    "body": [
+      "int ${1:N} = ${2:1e6};",
+      "vector<bool> ${3:is_prime}($1+1, true);",
+      "$3[0] = $3[1] = false;",
+      "for (int i = 2; i*i <= $1; i++)",
+      "\tif ($3[i]) for (int j = i*i; j <= $1; j+=i) $3[j] = false;"
+    ]
+  },
+  "Sparse table": {
+    "prefix": "spt",
+    "body": [
+      "int ${1:LOG} = 20;",
+      "vector<vector<int>> ${2:sp}($1, vector<int>(${3:n}));",
+      "$2[0] = ${4:a};",
+      "for (int j = 1; j < $1; j++)",
+      "\tfor (int i = 0; i+(1<<j) <= $3; i++)",
+      "\t\t$2[j][i] = min($2[j-1][i], $2[j-1][i+(1<<(j-1))]);",
+      "auto query = [&](int l, int r) {",
+      "\tint k = __lg(r-l+1);",
+      "\treturn min($2[k][l], $2[k][r-(1<<k)+1]);",
+      "};"
+    ]
+  },
+  "Segment tree": {
+    "prefix": "seg",
+    "body": [
+      "int ${1:n}; vector<${2:int}> ${3:t}(4*$1);",
+      "auto build = [&](auto& self, int v, int l, int r) -> void {",
+      "\tif (l==r) { $3[v]=${4:a}[l]; return; }",
+      "\tint m=(l+r)/2; self(self,2*v,l,m); self(self,2*v+1,m+1,r);",
+      "\t$3[v]=$3[2*v]+$3[2*v+1];",
+      "};",
+      "auto query = [&](auto& self, int v, int l, int r, int ql, int qr) -> $2 {",
+      "\tif (ql>r||qr<l) return 0;",
+      "\tif (ql<=l&&r<=qr) return $3[v];",
+      "\tint m=(l+r)/2;",
+      "\treturn self(self,2*v,l,m,ql,qr)+self(self,2*v+1,m+1,r,ql,qr);",
+      "};"
+    ]
+  },
+  "nCr mod": {
+    "prefix": "ncr",
+    "body": [
+      "const int ${1:MOD} = 1e9+7, ${2:MAXN} = 2e5+5;",
+      "vector<long long> ${3:fact}($2), ${4:inv_fact}($2);",
+      "$3[0]=1; for(int i=1;i<$2;i++) $3[i]=$3[i-1]*i%$1;",
+      "// compute inv_fact[$2-1] via mpow, then fill backwards",
+      "auto C = [&](int n, int r) -> long long {",
+      "\tif (r<0||r>n) return 0;",
+      "\treturn $3[n]%$1*$4[r]%$1*$4[n-r]%$1;",
+      "};"
+    ]
+  },
+  "Topological sort": {
+    "prefix": "topo",
+    "body": [
+      "vector<int> ${1:indeg}(${2:n}+1, 0);",
+      "for (auto& [u,v] : ${3:edges}) $1[v]++;",
+      "queue<int> ${4:q};",
+      "for (int i=1;i<=$2;i++) if (!$1[i]) $4.push(i);",
+      "vector<int> ${5:order};",
+      "while (!$4.empty()) {",
+      "\tauto u=$4.front(); $4.pop(); $5.push_back(u);",
+      "\tfor (auto v : ${6:adj}[u]) if (!--$1[v]) $4.push(v);",
+      "}"
+    ]
+  },
+  "Coordinate compress": {
+    "prefix": "ccmp",
+    "body": [
+      "vector<${1:int}> ${2:vals}(${3:a}.begin(), $3.end());",
+      "sort($2.begin(),$2.end()); $2.erase(unique($2.begin(),$2.end()),$2.end());",
+      "auto compress = [&]($1 x) {",
+      "\treturn lower_bound($2.begin(),$2.end(),x)-$2.begin();",
+      "};"
+    ]
+  }
+}

@@ -32,6 +32,14 @@
       "rev": "8ccd03b844a990cd740638715eb3a474001e51d7",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
+    "monokai-pro.nvim": {
+      "rev": "d8884d4473667c48bd17a68d08383d38839136a3",
+      "src": "https://github.com/loctvl842/monokai-pro.nvim"
+    },
+    "neovim": {
+      "rev": "cf2a288696b03d0934da713d66c6d71557b5c997",
+      "src": "https://github.com/rose-pine/neovim"
+    },
     "nightfox.nvim": {
       "rev": "ba47d4b4c5ec308718641ba7402c143836f35aa9",
       "src": "https://github.com/EdenEast/nightfox.nvim.git"
@@ -40,6 +48,10 @@
       "rev": "de740991c12411b663994b2860f1a4fd0937c130",
       "src": "https://github.com/MunifTanjim/nui.nvim"
     },
+    "nvim": {
+      "rev": "c4d475e4b5684747cde9b3f849186af7837d4397",
+      "src": "https://github.com/catppuccin/nvim"
+    },
     "nvim-lspconfig": {
       "rev": "44acfe887d4056f704ccc4f17513ed41c9e2b2e6",
       "src": "https://github.com/neovim/nvim-lspconfig"
@@ -47,6 +59,10 @@
     "nvim-treesitter": {
       "rev": "2bd9b9b4f12eed175fba35ca2db8e8584546a4ec",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
+    },
+    "oil.nvim": {
+      "rev": "0fcc83805ad11cf714a949c98c605ed717e0b83e",
+      "src": "https://github.com/stevearc/oil.nvim"
     },
     "toggleterm.nvim": {
       "rev": "9a88eae817ef395952e08650b3283726786fb5fb",
