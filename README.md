@@ -124,3 +124,5 @@ Common servers:
 |------|--------|
 | `<leader>d` | Toggle diagnostics |
 | `<leader>fx` | Toggle quickfix list |
+
+

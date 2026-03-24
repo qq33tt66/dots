@@ -1,9 +1,9 @@
-
+//
 configuration {
   modes: "window,drun,run,ssh";
-  font: "JetBrainsMono Nerd Font SemiBold 16";
-  drun-display-format: "{name}";
+  font: "Montserrat Medium 15";
   show-icons:true;
+  icon-size:300px;
   icon-theme:"Mint-Y-Blue";
 }
 
@@ -23,7 +23,7 @@ configuration {
 window {
   fullscreen: true;
   transparency:"real";
-  padding: 25% 20%;
+  padding: 15% 10%;
   background-color: @t;
   border-color: @t;
 }
@@ -33,7 +33,7 @@ listview {
   padding: 0;
   scrollbar: true;
   scroll:true;
-  lines:20;
+  lines:5;
 }
 
 
@@ -62,6 +62,7 @@ element.normal.active {
     text-color:       @active;
 }
 element.selected.normal {
+
     background-color: @selected-bg;
     text-color:       @selected-fg;
 }
@@ -91,6 +92,7 @@ inputbar {
     spacing:    0;
     text-color: @fg;
     padding:    2px;
+
     children:   [ prompt, textbox-prompt-sep, entry, case-indicator ];
 }
 

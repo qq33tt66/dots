@@ -1,9 +1,5 @@
-require("rose-pine").setup({
-    variant = "moon",
-    styles = {
-        bold = true,
-        italic = true,
-        transparency = true,
-    },
+require("catppuccin").setup({
+	transparent_background = false, -- disables setting the background color.
 })
-vim.cmd.colorscheme("rose-pine-moon")
+
+vim.cmd.colorscheme("catppuccin-frappe")

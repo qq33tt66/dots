@@ -7,10 +7,11 @@ require("conform").setup({
 		typescript = { "prettier" },
 		typescriptreact = { "prettier" },
 		json = { "prettier" },
+		svelte = { "prettier" },
 	},
 
 	format_on_save = {
 		timeout_ms = 500,
-		lsp_fallback = true,
+		lsp_format = "fallback",
 	},
 })

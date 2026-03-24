@@ -1,0 +1,53 @@
+# ~/.config/imv/config
+
+[options]
+suppress_default_binds = true
+background = 000000
+scaling_mode = full
+
+[binds]
+# Quit
+q = quit
+
+# Image navigation (vim-style)
+n = next
+p = prev
+<Left> = prev
+<Right> = next
+<bracketleft> = prev
+<bracketright> = next
+
+# Jump to first/last (vim gg / G)
+gg = goto 1
+G = goto -1
+
+# Panning (vim hjkl)
+h = pan -50 0
+l = pan 50 0
+j = pan 0 50
+k = pan 0 -50
+
+# Zooming
+i = zoom 1
+o = zoom -1
+<Shift+plus> = zoom 1
+<minus> = zoom -1
+<Up> = zoom 1
+<Down> = zoom -1
+
+# Rotation
+r = rotate by 90
+R = rotate by -90
+
+# Flip
+<Shift+H> = flip horizontal
+<Shift+V> = flip vertical
+
+# Fullscreen
+f = fullscreen
+
+# Overlay
+d = overlay
+
+# Close current image
+x = close
